@@ -14,20 +14,20 @@ logo = '''
 '''
 print(logo)
 # Create an empty dictionary to add players to
-name_and_bids = {}
+bids = {}
 add_another_bid = True
 
 # Create a loop to add names and bids until there are no more bidders
 while add_another_bid:
     # Input for player name and bid
     name = input("What is your name?: ")
-    bid = int(input("What is your bid?: $"))
+    price = int(input("What is your bid?: $"))
     
     # Add name and bid to dictionary
-    name_and_bids[name] = bid
+    bids[name] = price
     
     #  Loop to keep repeating until told no 
-    go_again = input("Are thee any other bidders? Type 'yes' or 'no'. ")
+    go_again = input("Are thee any other bidders? Type 'yes' or 'no'. ").lower()
 
     if go_again == 'yes':
         print("\n" * 100)
@@ -42,10 +42,10 @@ while add_another_bid:
 highest_bid = 0
 winner = ''
 
-for player in name_and_bids:
-    if name_and_bids[player] > highest_bid:
+for player in bids:
+    if bids[player] > highest_bid:
         winner = player
-        highest_bid = name_and_bids[player]
+        highest_bid = bids[player]
 
 
 print(f"The winner is {winner} with a bid of ${highest_bid}")
