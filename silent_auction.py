@@ -48,4 +48,5 @@ for player in bids:
         highest_bid = bids[player]
 
 
+
 print(f"The winner is {winner} with a bid of ${highest_bid}")
